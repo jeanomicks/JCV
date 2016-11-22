@@ -32,6 +32,9 @@ Rscript JaccardClusters.R input.txt
 The script produces four output files:
 
 jcv_clusters.mx - the JCV matrix for all species pairs, which is used to make the heatmap
+
 jcv_clusters.jpg - the JCV heatmap which graphically depicts JCVs for all species pairs. Lighter colors represent JCV closer to 1.0 (continuity), darker ones represent JCVs closer to 0.0 (discontinuity)
+
 jcv_clusters.sif - file useful for Cytoscape
+
 jcv_clusters.sif - file useful for Cytoscape
