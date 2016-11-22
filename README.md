@@ -14,15 +14,25 @@ that is, the intersection of common genes divided by the union of all genes for 
 A sample input looks like the following:
 
 species                                 orthologue ID
+
 Acanthamoeba_castellanii_mamavirus      NCVOG0001
+
 Acanthamoeba_castellanii_mamavirus      NCVOG0001
+
 Acanthamoeba_castellanii_mamavirus      NCVOG0001
+
 Acanthamoeba_polyphaga_mimivirus        NCVOG0001
+
 Acanthamoeba_polyphaga_mimivirus        NCVOG0001
+
 Acanthamoeba_polyphaga_mimivirus        NCVOG0001
+
 Acanthamoeba_polyphaga_moumouvirus      NCVOG0001
+
 Acanthamoeba_polyphaga_moumouvirus      NCVOG0001
+
 Bathycoccus_sp._RCC1105_virus_BpV1      NCVOG0001
+
 Cafeteria_roenbergensis_virus_BV-PW1    NCVOG0001
 
 The script can be run in the following way:
