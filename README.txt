@@ -24,9 +24,11 @@ The script can be run in the following way:
 
 Rscript JaccardClusters.R input.txt
 
-The script produces four output files:
+The script produces six output files:
 
 jcv_clusters.mx - the JCV matrix for all species pairs, which is used to make the heatmap
 jcv_clusters.jpg - the JCV heatmap which graphically depicts JCVs for all species pairs. Lighter colors represent JCV closer to 1.0 (continuity), darker ones represent JCVs closer to 0.0 (discontinuity)
 jcv_clusters.sif - file useful for Cytoscape
 jcv_clusters.sif - file useful for Cytoscape
+clusters.txt - a list of the species under study and the number of the baramin that k-means clustering has assigned to them
+stats.txt - a statistics file listing the following information for each baramin discovered by k-means clustering: baramin id, number of species in baramin, mean JCV, std. dev JCV, min. JCV, max. JCV, number of all orthologs in baramin, intersect of all genes in baramin, union of all genes in baramin, PGQ value, CI value, and p-value
