@@ -1,9 +1,9 @@
 options(warn=-1)
 
-invisible(if (file.exists("jcv_cluster.jpg")) file.remove("jcv_cluster.jpg"))
-invisible(if (file.exists("jcv_cluster.mx")) file.remove("jcv_cluster.mx"))
-invisible(if (file.exists("jcv_cluster.sif")) file.remove("jcv_cluster.sif"))
-invisible(if (file.exists("jcv_cluster.noa")) file.remove("jcv_cluster.noa"))
+invisible(if (file.exists("jcv_clusters.jpg")) file.remove("jcv_clusters.jpg"))
+invisible(if (file.exists("jcv_clusters.mx")) file.remove("jcv_clusters.mx"))
+invisible(if (file.exists("jcv_clusters.sif")) file.remove("jcv_clusters.sif"))
+invisible(if (file.exists("jcv_clusters.noa")) file.remove("jcv_clusters.noa"))
 invisible(if (file.exists("clusters.txt")) file.remove("clusters.txt"))
 invisible(if (file.exists("stats.txt")) file.remove("stats.txt"))
 
@@ -24,7 +24,6 @@ outliers <- as.matrix(read.delim(args[3], header=F, sep="\t"))
 datamx <- as.matrix(data)
 cols = c("V1","V2")
 datamx2 = datamx[,cols]
-#species = sort(unique(datamx2[,1]))
 species = as.matrix(sort(unique(datamx2[,1])))
 species_no_outliers <- species[!species %in% outliers]
 
@@ -72,12 +71,12 @@ myBreaks <- c(seq(0,1,by=0.01))
 cexx = 1-length(species)/200
 ceyy = cexx
 
-jpeg(filename = "jcv_cluster.jpg", height = 5000, width = 5000, units = "px", res = 600)
+jpeg(filename = "jcv_clusters.jpg", height = 5000, width = 5000, units = "px", res = 600)
 heatmap(jcvs2, symkey =F, symbreaks=F, scale="none", dendrogram = F, Rowv=F, Colv=F,col = gray.colors(100), breaks = myBreaks, na.color="white", margin = c(12,16), 
 cexRow=cexx,cexCol=ceyy, key=T, trace="none", lmat=rbind( c(4, 3), c(2,1), c(0,0) ), lhei=c(1.8,6.5, 1 ))
 invisible(dev.off())
 
-write.table(jcvs2, file="jcv_cluster.mx", sep="\t", row.names=species, col.names=species)
+write.table(jcvs2, file="jcv_clusters.mx", sep="\t", row.names=species, col.names=species)
 
 message("Calculating baramins and statistics...")
 
