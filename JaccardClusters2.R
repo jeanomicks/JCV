@@ -9,7 +9,7 @@ invisible(if (file.exists("stats.txt")) file.remove("stats.txt"))
 
 args = commandArgs(trailingOnly=TRUE)
 if (length(args)!=3) {
-        stop("Wrong parameters. Run as: Rscript JaccardClusters.R <species-ortholog list> <estimated number of clusters>", call.=FALSE)
+        stop("Wrong parameters. Run as: Rscript JaccardClusters.R <species-ortholog list> <estimated number of clusters> <list of outlier species>", call.=FALSE)
 }
 
 jcv <- function(list1,list2)
