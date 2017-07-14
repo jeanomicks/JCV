@@ -48,3 +48,17 @@ jcv_clusters.jpg - the JCV heatmap which graphically depicts JCVs for all specie
 jcv_clusters.sif - file useful for Cytoscape
 
 jcv_clusters.sif - file useful for Cytoscape
+
+
+
+=====Multi-algorithm Jaccard Coefficient Method=====
+
+The original version of the Jaccard Coefficient Method predicts clusters/baramins based on k-means clustering.
+Two extra clustering algorithms are available to choose from when using the multi-algorithm Jaccard Coefficient Method.
+For this use the JaccardCoefficientMulti.R script. These two extra algorithms determine clusters with at least three members.
+
+These 2 algorithms are:
+
+1.) the PGQ (pgq) method: here the algorithm determines clusters based on a high pan-genome quotient (PGQ). A PGQ can be detected when the algorithm starts out from a seed species and keeps adding newer and newer species. The PGQ is tracked constantly until there is a sharp drop in the value, denoting that all members have been added to the cluster which highly overlap in gene content with each other.
+
+2.) The Matrix Cut (mxcut) method: Here the user has to supply a JCV cutoff value. The algorithm determines members of a cluster whose members each have a JCV with each other in a pairwise manner. In other words, it takes the whole JCV matrix in graph representation and removes edges (interspecies relationships) which have a JCV below the cutoff value. The remaining "cut" graph consists of the predicted clusters.
