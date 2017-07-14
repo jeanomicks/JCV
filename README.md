@@ -61,4 +61,10 @@ These 2 algorithms are:
 
 1.) the PGQ (pgq) method: here the algorithm determines clusters based on a high pan-genome quotient (PGQ). A PGQ can be detected when the algorithm starts out from a seed species and keeps adding newer and newer species. The PGQ is tracked constantly until there is a sharp drop in the value, denoting that all members have been added to the cluster which highly overlap in gene content with each other.
 
+test run:
+Rscript JaccardClustersMulti3.R pgq input2.txt outlier
+
 2.) The Matrix Cut (mxcut) method: Here the user has to supply a JCV cutoff value. The algorithm determines members of a cluster whose members each have a JCV with each other in a pairwise manner. In other words, it takes the whole JCV matrix in graph representation and removes edges (interspecies relationships) which have a JCV below the cutoff value. The remaining "cut" graph consists of the predicted clusters.
+
+test run: 
+Rscript JaccardClustersMulti3.R mxcut input2.txt outlier 0.7
