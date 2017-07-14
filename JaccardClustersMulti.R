@@ -5,16 +5,17 @@ invisible(if (file.exists("jcv_clusters.mx")) file.remove("jcv_clusters.mx"))
 invisible(if (file.exists("jcv_clusters.sif")) file.remove("jcv_clusters.sif"))
 invisible(if (file.exists("jcv_clusters.noa")) file.remove("jcv_clusters.noa"))
 invisible(if (file.exists("clusters.txt")) file.remove("clusters.txt"))
-invisible(if (file.exists("clusters_pgq.txt")) file.remove("clusters.txt"))
-invisible(if (file.exists("clusters_mxcut.txt")) file.remove("clusters.txt"))
+invisible(if (file.exists("clusters_pgq.txt")) file.remove("clusters_pgq.txt"))
+invisible(if (file.exists("clusters_mxcut.txt")) file.remove("clusters_mxcut.txt"))
 invisible(if (file.exists("stats.txt")) file.remove("stats.txt"))
-invisible(if (file.exists("stats_pgq.txt")) file.remove("stats.txt"))
-invisible(if (file.exists("stats_mxcut.txt")) file.remove("stats.txt"))
+invisible(if (file.exists("stats_pgq.txt")) file.remove("stats_pgq.txt"))
+invisible(if (file.exists("stats_mxcut.txt")) file.remove("stats_mxcut.txt"))
 
 args = commandArgs(trailingOnly=TRUE)
 if ((args[1]=="k-means")&&(!(length(args)==4))) {
         stop("Wrong parameters. Run as: Rscript JaccardClustersMulti.R k-means <species-ortholog list> <list of outlier species> <estimated no. clusters>", call.=FALSE)
-} else {
+} 
+if ((args[1]=="k-means")&&(length(args)==4)) {
 	  k = args[4]
 	  if (!(k == round(k))) {
 		stop("Cluster number not an integer!")
@@ -22,7 +23,8 @@ if ((args[1]=="k-means")&&(!(length(args)==4))) {
 }
 if ((args[1]=="mxcut")&&(!(length(args)==4))) {
         stop("Wrong parameters. Run as: Rscript JaccardClustersMulti.R mxcut <species-ortholog list> <list of outlier species> <JCV cutoff>", call.=FALSE)
-} else {
+} 
+if ((args[1]=="mxcut")&&(length(args)==4)) {
 	  if ((args[4]<0)||(args[4]>1)) {
 		stop("Cutoff not between 0 and 1")
 	  }
