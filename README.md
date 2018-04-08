@@ -55,8 +55,8 @@ The latest version of the R script does several new things:
 - it creates an output directory for the output files (for this you have to add an output directory name as the fourth parameter)
 - it creates the heatmap in red to yellow color
 - it calculates those genes which belong to the core genome and the pan genome of the cluster
-   o the core genome being the collection of genes common to all species in the cluster
-   o the pan genome being the collection of genes in at least one species of the cluster
+   - the core genome being the collection of genes common to all species in the cluster
+   - the pan genome being the collection of genes in at least one species of the cluster
 - it adds the sizes of the core and pan genome and the core/pan genome ratio to the stats file
 
 =====Multi-algorithm Jaccard Coefficient Method=====
